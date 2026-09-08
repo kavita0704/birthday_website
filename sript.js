@@ -1,4 +1,4 @@
-const birthday = new Date("September 1, 2026 00:00:00").getTime();
+const birthday = new Date("September 11, 2026 00:00:00").getTime();
 
 const countdownInterval = setInterval(countdown, 1000);
 
