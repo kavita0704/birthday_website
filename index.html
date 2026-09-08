@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Surprise</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 🎈 Balloons -->
+    <div class="balloons">
+
+        <div class="balloon">🎈</div>
+        <div class="balloon">🎈</div>
+        <div class="balloon">🎈</div>
+        <div class="balloon">🎈</div>
+        <div class="balloon">🎈</div>
+
+    </div>
+
+
+    <!-- 🎉 Confetti -->
+    <div class="confetti">
+
+        <span>🎉</span>
+        <span>✨</span>
+        <span>🎊</span>
+        <span>💗</span>
+        <span>✨</span>
+        <span>🎉</span>
+        <span>💖</span>
+
+    </div>
+
+
+    <!-- 🎵 Birthday Music -->
+    <audio id="birthday-music" loop>
+
+        <source src="birthday song.mp3.mp3" type="audio/mpeg">
+
+    </audio>
+
+
+    <!-- 🎵 Memories Music -->
+    <audio id="memories-music" loop>
+
+        <source src="memories.mp3" type="audio/mpeg">
+
+    </audio>
+
+
+    <!-- Music Button -->
+    <button id="music-button">🎵 Play Music</button>
+
+
+    <!-- ⏳ Countdown Heading -->
+    <h1>Something special is coming....</h1>
+
+
+    <!-- ⏳ Countdown -->
+    <div id="countdown">
+
+        <span id="days">0</span> :
+        <span id="hours">0</span> :
+        <span id="minutes">0</span> :
+        <span id="seconds">0</span>
+
+    </div>
+
+
+    <!-- 💗 Countdown Message -->
+    <p id="message">
+
+        Counting every second until your special day 💗
+
+    </p>
+
+
+    <!-- 🎂 Birthday Screen -->
+    <div id="birthday-screen" style="display:none;">
+
+        <h1>🎉 Happy Birthday SANYAAAAAAA 🎉</h1>
+
+        <p>
+            I didn't know what to do for your birthday,
+            and since your bestie is broke 😂,
+            I couldn't buy you anything fancy.
+            So I made this for you instead.
+            I hope you like it! ❤️
+        </p>
+
+        <button type="button" onclick="startCakeSurprise()">
+    Enter Your Surprise
+</button>
+
+    </div>
+
+    <!-- Cake Surprise -->
+<div id="cake-screen">
+
+    <div id="cake-timer">5</div>
+
+    <div id="cake-area" style="display: none;">
+
+        <div class="cake">
+            <div class="candle">
+                <div class="flame">🔥</div>
+            </div>
+
+            <div class="candle">
+                <div class="flame">🔥</div>
+            </div>
+
+            <div class="candle">
+                <div class="flame">🔥</div>
+            </div>
+
+            <div class="cake-top"></div>
+            <div class="cake-body"></div>
+        </div>
+
+        <h2 id="blow-text">🎂 Blow the candles! 💨</h2>
+
+    </div>
+
+</div>
+
+
+    <!-- 💗 Memories Screen -->
+    <div id="memories-screen">
+
+        <h1>💗 Our Memories 💗</h1>
+
+        <p>
+            Some little moments that mean a lot to me...
+        </p>
+
+
+        <!-- First 3 memories -->
+        <div class="memory-container">
+
+            <div class="memory-card">
+
+                <div class="photo-placeholder">
+                   <img src="photo1.jpg" alt="Memory One">
+                </div>
+
+                <h2>Memory one</h2>
+
+                <p>
+                    Our first beautiful memory ❤️
+                </p>
+
+            </div>
+
+
+            <div class="memory-card">
+
+                <div class="photo-placeholder">
+                   <img src="photo2.jpeg" alt="Memory Two">
+                </div>
+
+                <h2>Memory Two</h2>
+
+                <p>
+                    Another moment I'll always remember 💕
+                </p>
+
+            </div>
+
+
+            <div class="memory-card">
+
+                <div class="photo-placeholder">
+                    <img src="photo3.jpg" alt="Memory Three">
+                </div>
+
+                <h2>Memory Three</h2>
+
+                <p>
+                    And many more memories to come ✨
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Next 3 memories -->
+        <div class="memory-container">
+
+            <div class="memory-card">
+
+                <div class="photo-placeholder">
+                    <img src="photo4.jpg" alt="Memory Four">
+                </div>
+
+                <h2>Memory Four</h2>
+
+                <p>
+                    Another crazy moment 😂
+                </p>
+
+            </div>
+
+
+            <div class="memory-card">
+
+                <div class="photo-placeholder">
+                    <img src="photo5.jpg" alt="Memory Five">
+                </div>
+
+                <h2>Memory Five</h2>
+
+                <p>
+                    One of my favorites 💗
+                </p>
+
+            </div>
+
+
+            <div class="memory-card">
+
+                <div class="photo-placeholder">
+                    <img src="photo6.jpg" alt="Memory Six">
+                </div>
+
+                <h2>Memory Six</h2>
+
+                <p>
+                    One I'll never forget ❤️
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Last 3 memories -->
+        <div class="memory-container">
+
+            <div class="memory-card">
+
+                <div class="photo-placeholder">
+                    <img src="photo77.jpeg" alt="Memory Seven">
+                </div>
+
+                <h2>Memory Seven</h2>
+
+                <p>
+                    Another special moment 💕
+                </p>
+
+            </div>
+
+
+            <div class="memory-card">
+
+                <div class="photo-placeholder">
+                   <img src="photo8.jpg" alt="Memory Eight">
+                </div>
+
+                <h2>Memory Eight</h2>
+
+                <p>
+                    Always makes me smile 🥹
+                </p>
+
+            </div>
+
+
+            <div class="memory-card">
+
+                <div class="photo-placeholder">
+                    <img src="photo9.jpeg" alt="Memory Nine">
+                </div>
+
+                <h2>Memory Nine</h2>
+
+                <p>
+                    And many more to come ❤️
+                </p>
+
+            </div>
+
+        </div>
+
+    <!-- 📖 BUTTON AFTER MEMORIES -->
+
+        <div class="next-section">
+
+            <p>
+                But wait... there's something else. 🥹
+            </p>
+
+            <button onclick="startLetters()">
+                📖 Open One Last Thing
+            </button>
+
+        </div>
+
+
+    </div>
+   <!-- ============================= -->
+<!-- 📖 LETTER INTRO SCREEN -->
+<!-- ============================= -->
+
+<div id="letter-intro">
+
+    <div class="book">
+
+        <div class="book-cover">
+            <div class="book-title">
+                For Sanyaaaa 💗
+            </div>
+
+            <div class="book-decoration">
+                ✨ 📖 ✨
+            </div>
+        </div>
+
+    </div>
+
+    <p class="book-text">
+        Some memories were not enough...
+        <br>
+        so we wrote you something. 💌
+    </p>
+
+</div>
+
+
+<!-- ============================= -->
+<!-- ⌨️ LETTER 1 TYPING SCREEN -->
+<!-- ============================= -->
+
+<div id="letter1-typing">
+
+    <div class="typing-container">
+
+        <div class="typing-icon">
+            💌
+        </div>
+
+        <h1 id="typing-title-1"></h1>
+
+        <p id="typing-text-1"></p>
+
+    </div>
+
+</div>
+
+
+<!-- ============================= -->
+<!-- 💌 LETTER 1 -->
+<!-- ============================= -->
+
+<div id="letter1-screen">
+
+    <div class="letter">
+
+        <div class="letter-top">
+            💌
+        </div>
+
+        <h1>
+            To My Sanyaaaa ❤️
+        </h1>
+
+        <p>
+            Dear Sanyaaaa,
+        </p>
+
+        <p>
+            Here you can write your first friend's
+            personal birthday message.
+            Tell her about your friendship,
+            your favorite memories together,
+            the stupid things you both did,
+            and how much she means to you. 🥹
+        </p>
+
+        <p>
+            No matter how much we grow up,
+            I hope we always remain the same
+            crazy people we are today. 😂❤️
+        </p>
+
+        <p>
+            Happy Birthday once again! 🎂
+        </p>
+
+        <p class="signature">
+            — Your first friend 💗
+        </p>
+
+        <button onclick="openLetter2()">
+            Read the next letter 💌
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ============================= -->
+<!-- ⌨️ LETTER 2 TYPING SCREEN -->
+<!-- ============================= -->
+
+<div id="letter2-typing">
+
+    <div class="typing-container">
+
+        <div class="typing-icon">
+            💗
+        </div>
+
+        <h1 id="typing-title-2"></h1>
+
+        <p id="typing-text-2"></p>
+
+    </div>
+
+</div>
+
+
+<!-- ============================= -->
+<!-- 💌 LETTER 2 -->
+<!-- ============================= -->
+
+<div id="letter2-screen">
+
+    <div class="letter">
+
+        <div class="letter-top">
+            💌
+        </div>
+
+        <h1>
+            One More Thing... 🥹
+        </h1>
+
+        <p>
+            Hey Sanyaaaa,
+        </p>
+
+        <p>
+            This is where your second friend
+            can write her own message.
+            Make this one different from the
+            first letter so it feels personal. ❤️
+        </p>
+
+        <p>
+            Thank you for being the person
+            you are, for all the laughs,
+            all the memories and all the
+            little moments that became
+            unforgettable. 💕
+        </p>
+
+        <p>
+            I hope this year brings you
+            everything you deserve.
+        </p>
+
+        <p class="signature">
+            — Your second friend 💗
+        </p>
+        <button onclick="startVideos()">
+    😂 Okay... Show Me The Chaos
+</button>
+
+    </div>
+
+</div>
+<!-- ================================= -->
+<!-- 🎬 CRAZY VIDEOS INTRO -->
+<!-- ================================= -->
+
+<div id="videos-intro">
+
+    <h1>😂 Okay... Enough Emotional Stuff!</h1>
+
+    <p>
+        You thought that was the end? 👀
+    </p>
+
+    <p>
+        Now let's remember the actual chaos. 😂
+    </p>
+
+    <button onclick="startVideos()">
+        🎬 Show Me The Chaos
+    </button>
+
+</div>
+
+
+<!-- ================================= -->
+<!-- 🎥 CRAZY VIDEOS -->
+<!-- ================================= -->
+
+<div id="videos-screen">
+
+    <h1>😂 Our Crazy Moments 😂</h1>
+
+    <p class="video-subtitle">
+        Evidence that we should probably never be left unsupervised. 💀
+    </p>
+
+
+    <div class="video-container">
+
+        <div class="video-card">
+
+            <video controls>
+                <source src="VID_20230326_165622.mp4" type="video/mp4">
+            </video>
+
+            <h2>That one stupid moment 😂</h2>
+
+        </div>
+
+
+        <div class="video-card">
+
+            <video controls>
+                <source src="VID_20240220_230359.mp4" type="video/mp4">
+            </video>
+
+            <h2>Why are we like this? 💀</h2>
+
+        </div>
+
+
+        <div class="video-card">
+
+            <video controls>
+                <source src="video3.mp4" type="video/mp4">
+            </video>
+
+            <h2>Pure chaos 😂</h2>
+
+        </div>
+
+
+        <div class="video-card">
+
+            <video controls>
+                <source src="video4.mp4" type="video/mp4">
+            </video>
+
+            <h2>Another unforgettable moment ❤️</h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="video-ending">
+
+        <h2>
+            And somehow... we survived all of this. 😂❤️
+        </h2>
+
+        <p>
+            Happy Birthday Sanyaaaaa! 🎂💗
+        </p>
+
+    </div>
+
+</div>
+
+    <!-- 🎆 Fireworks -->
+    <canvas id="fireworks"></canvas>
+
+
+    <!-- JavaScript -->
+    <script src="sript.js"></script>
+
+</body>
+
+</html>
