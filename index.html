@@ -39,19 +39,25 @@
 
 
     <!-- 🎵 Birthday Music -->
-    <audio id="birthday-music" loop>
+    <audio id="birthday-music" >
 
         <source src="birthday song.mp3.mp3" type="audio/mpeg">
 
     </audio>
 
+     <audio id="cake-music">
+         <source src="cake_song.mp3" type="audio/mpeg">
+     </audio>
 
-    <!-- 🎵 Memories Music -->
-    <audio id="memories-music" loop>
-
-        <source src="memories.mp3" type="audio/mpeg">
-
-    </audio>
+    <audio id="memories-music">
+         <source src="memory song.mp3" type="audio/mpeg">
+     </audio>
+     
+     <audio id="music">
+         <source src="song 4.mp3" type="audio/mpeg">
+     </audio>
+    
+    
 
 
     <!-- Music Button -->
@@ -373,16 +379,35 @@
         </h1>
 
         <p>
-            Dear Sanyaaaa,
+           Dear Kaamo,
         </p>
 
         <p>
-            Here you can write your first friend's
-            personal birthday message.
-            Tell her about your friendship,
-            your favorite memories together,
-            the stupid things you both did,
-            and how much she means to you. 🥹
+
+Happy birthday! 🥳❤️
+
+Wishing you a really, really happy, healthy and wealthy birthday. I am proud of you.
+
+I really miss those first, second and third years of campus... acha tha yaar. 🥹 Aur woh sab choti-choti fights... end of the day sab sahi ho jaata tha.
+
+Last sem mein mujhe bas enjoy karna tha, aur achhe se nikalna tha, but life is really unpredictable. Jo chahte hain, woh kahan hota hai.
+
+But keeping aside all the fights, misunderstandings and everything negative that happened in the last sem, that phase was still special in its own way. ❤️
+
+Divaam ka poha, mne spelling galat likhi hai? divyam tha kya? chodo... bakchodi... 😂
+
+And I am really really  sorry if I ever hurt you, or was ever mean to you. Or even  in my chaotic life situations... that wasn't really me. You know that, right? 🥹
+
+So, bahut saara pyaar. ❤️ Aur hamesha aise hi khush rehna ki ek din tere bacchon ke bhi bacche call karke bolein, “Kavita aunty, aaj humari dadi ka birthday hai, aap zallol aana!” 🤭😂
+
+Love youuu 🫶🫶
+
+And I really hope you liked the gift. ❤️ Next time, I wish mere paas isse bhi kuch zyada karne ko ho.
+
+Aur aasha karti hoon ki tera yeh janamdivas khushiyon aur bahut saari backchodi se bhara ho. 😁❤️
+
+Happy Birthday once again, Kaamo! 🎂🫶
+
         </p>
 
         <p>
@@ -396,7 +421,7 @@
         </p>
 
         <p class="signature">
-            — Your first friend 💗
+            — Chintamani 💗
         </p>
 
         <button onclick="openLetter2()">
@@ -501,81 +526,72 @@
 
 </div>
 
-
 <!-- ================================= -->
-<!-- 🎥 CRAZY VIDEOS -->
+<!-- 🎬 VIDEO COMPILATION -->
 <!-- ================================= -->
 
 <div id="videos-screen">
 
     <h1>😂 Our Crazy Moments 😂</h1>
 
-    <p class="video-subtitle">
-        Evidence that we should probably never be left unsupervised. 💀
+    <p id="video-caption">
+        Okay... let's see the chaos. 💀
     </p>
 
+    <video id="main-video" controls playsinline>
 
-    <div class="video-container">
+        <source
+            id="main-video-source"
+            src="VID_20230326_165622.mp4"
+            type="video/mp4">
 
-        <div class="video-card">
-
-            <video controls>
-                <source src="VID_20230326_165622.mp4" type="video/mp4">
-            </video>
-
-            <h2>That one stupid moment 😂</h2>
-
-        </div>
-
-
-        <div class="video-card">
-
-            <video controls>
-                <source src="VID_20240220_230359.mp4" type="video/mp4">
-            </video>
-
-            <h2>Why are we like this? 💀</h2>
-
-        </div>
-
-
-        <div class="video-card">
-
-            <video controls>
-                <source src="video3.mp4" type="video/mp4">
-            </video>
-
-            <h2>Pure chaos 😂</h2>
-
-        </div>
-
-
-        <div class="video-card">
-
-            <video controls>
-                <source src="video4.mp4" type="video/mp4">
-            </video>
-
-            <h2>Another unforgettable moment ❤️</h2>
-
-        </div>
-
-    </div>
-
-
-    <div class="video-ending">
-
-        <h2>
-            And somehow... we survived all of this. 😂❤️
-        </h2>
-
-        <p>
-            Happy Birthday Sanyaaaaa! 🎂💗
-        </p>
-
-    </div>
+    </video>
 
 </div>
+<!-- 💗 FRIENDS' BIRTHDAY WISHES -->
+<div id="wishes-screen">
+
+    <h1>💗 One Last Surprise 💗</h1>
+
+    <p>
+        A few people wanted to wish you a Happy Birthday... 🥹
+    </p>
+
+    <video id="wishes-video" controls playsinline>
+        <source src="VID_20240220_230359.mp4" type="video/mp4">
+    </video>
+
+    <h2>
+        You are loved more than you know. ❤️
+    </h2>
+
+    <p>
+        Happy Birthday Sanyaaaaa! 🎂💗
+    </p>
+
+</div>
+
+  <!-- 📸 FINAL PHOTO MEMORIES -->
+<div id="final-photos-screen">
+
+    <h1>💗 Some Memories Forever 💗</h1>
+
+    <p class="final-photo-text">
+        Some moments deserve to be remembered forever... 🥹❤️
+    </p>
+
+    <div class="final-photo-container">
+
+        <img id="final-slideshow-photo" src="photo10.jpg" alt="Beautiful memory">
+
+    </div>
+
+    <p class="final-photo-message">
+        No matter where life takes us... these memories will always stay. 🫶
+    </p>
+
+</div>
+
 
     <!-- 🎆 Fireworks -->
     <canvas id="fireworks"></canvas>

@@ -1073,3 +1073,235 @@ h1 {
     }
 
 }
+/* =========================================
+   🎬 FULL SCREEN VIDEO
+========================================= */
+
+#videos-screen {
+
+    display: none;
+
+    width: 100%;
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+#videos-screen h1 {
+
+    font-size: 45px;
+
+    color: #d63384;
+
+    margin-bottom: 10px;
+}
+
+
+#video-caption {
+
+    font-size: 22px;
+
+    color: #555;
+
+    margin-bottom: 30px;
+}
+
+
+#main-video {
+
+    width: 80%;
+
+    max-width: 900px;
+
+    max-height: 70vh;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 35px rgba(214, 51, 132, 0.25);
+
+    background: black;
+}
+
+
+@media (max-width: 700px) {
+
+    #main-video {
+
+        width: 95%;
+
+    }
+
+}
+/* ============================= */
+/* 💗 FRIENDS WISHES VIDEO */
+/* ============================= */
+
+#wishes-screen {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 50px 20px;
+    text-align: center;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #ffe6f2,
+        #fff5fa
+    );
+}
+
+#wishes-screen h1 {
+    font-size: 45px;
+    color: #d63384;
+    margin-bottom: 15px;
+}
+
+#wishes-screen p {
+    font-size: 22px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+#wishes-video {
+    width: 80%;
+    max-width: 900px;
+    max-height: 70vh;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 35px rgba(214, 51, 132, 0.25);
+
+    background: black;
+}
+
+#wishes-screen h2 {
+    font-size: 28px;
+    color: #d63384;
+    margin-top: 30px;
+}
+
+@media (max-width: 700px) {
+
+    #wishes-screen h1 {
+        font-size: 32px;
+    }
+
+    #wishes-screen p {
+        font-size: 18px;
+    }
+
+    #wishes-video {
+        width: 95%;
+    }
+
+    #wishes-screen h2 {
+        font-size: 22px;
+    }
+}
+/* ============================= */
+/* 📸 FINAL PHOTO SLIDESHOW */
+/* ============================= */
+
+#final-photos-screen {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 50px 20px;
+
+    text-align: center;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #fff0f7,
+        #ffe6f2
+    );
+}
+
+#final-photos-screen h1 {
+    font-size: 45px;
+    color: #d63384;
+    margin-bottom: 10px;
+}
+
+.final-photo-text {
+    font-size: 21px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.final-photo-container {
+    width: 80%;
+    max-width: 750px;
+    height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+#final-slideshow-photo {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 35px rgba(214, 51, 132, 0.25);
+
+    opacity: 1;
+
+    transition: opacity 0.8s ease;
+}
+
+.final-photo-message {
+    margin-top: 30px;
+    font-size: 22px;
+    color: #d63384;
+}
+
+@media (max-width: 700px) {
+
+    #final-photos-screen h1 {
+        font-size: 32px;
+    }
+
+    .final-photo-text {
+        font-size: 18px;
+    }
+
+    .final-photo-container {
+        width: 95%;
+        height: 400px;
+    }
+
+    .final-photo-message {
+        font-size: 18px;
+    }
+}

@@ -244,23 +244,31 @@ function startCakeSurprise() {
 
         } else {
 
-            clearInterval(cakeCountdown);
+    clearInterval(cakeCountdown);
+
+    // Hide timer
+    timer.style.display = "none";
+
+    // Show cake
+    cakeArea.style.display = "block";
 
 
-            // ==================================
-            // SHOW CAKE
-            // ==================================
+    // 🎂 Start cake music automatically
+    const birthdayMusic =
+        document.getElementById("birthday-music");
 
-            timer.style.display = "none";
+    const cakeMusic =
+        document.getElementById("cake-music");
 
-            cakeArea.style.display = "block";
+    birthdayMusic.pause();
+    birthdayMusic.currentTime = 0;
+
+    cakeMusic.currentTime = 0;
+    cakeMusic.play().catch(() => {});
 
 
-            // ==================================
-            // WAIT 4 SECONDS
-            // ==================================
-
-            setTimeout(() => {
+    // Wait 4 seconds
+    setTimeout(() => {
 
 
                 // Blow candles
@@ -339,7 +347,7 @@ function startCakeSurprise() {
                     memoriesMusic.play().catch(() => {});
 
 
-                }, 1000);
+                }, 10000);
 
             }, 4000);
         }
@@ -371,6 +379,17 @@ function startLetters() {
     // Scroll to book
     window.scrollTo(0, 0);
 
+    const memoriesMusic = document.getElementById("memories-music");
+
+if (memoriesMusic) {
+    memoriesMusic.pause();
+    memoriesMusic.currentTime = 0;
+}
+// 💌 Start Song 4 for the letters
+const letterMusic = document.getElementById("music");
+
+letterMusic.currentTime = 0;
+letterMusic.play().catch(() => {});
 
     // Wait for book animation
     setTimeout(() => {
@@ -409,7 +428,7 @@ function startLetter1Typing() {
 
 
     const titleText =
-        "A letter from your first friend... 💌";
+        "A letter from chintamani... 💌";
 
     const bodyText =
         "Because some things are easier to write than to say...";
@@ -475,7 +494,7 @@ function openLetter2() {
         "And now... another letter for you 💗";
 
     const bodyText =
-        "Because one friend could never say everything...";
+        "Because your sunita darling always ready to gyaan chodna...";
 
 
     typeText(title, titleText, 70, () => {
@@ -542,20 +561,154 @@ function typeText(element, text, speed, callback) {
    🎬 START VIDEOS
 ========================================= */
 
+/* =========================================
+   🎬 START VIDEOS
+========================================= */
+
 function startVideos() {
 
-    // Hide intro
-    document.getElementById("videos-intro").style.display = "none";
+    // Stop Song 4
+    const letterMusic = document.getElementById("music");
 
-    // Show videos
-    document.getElementById("videos-screen").style.display = "block";
+    if (letterMusic) {
+        letterMusic.pause();
+        letterMusic.currentTime = 0;
+    }
 
-    // Start from top
+    // Hide second letter
+    document.getElementById("letter2-screen").style.display = "none";
+
+    // Hide video intro if visible
+    const videoIntro = document.getElementById("videos-intro");
+
+    if (videoIntro) {
+        videoIntro.style.display = "none";
+    }
+
+    // Show video screen
+    const videosScreen = document.getElementById("videos-screen");
+    videosScreen.style.display = "flex";
+
+    // Reset and start video
+    const mainVideo = document.getElementById("main-video");
+
+    if (mainVideo) {
+        mainVideo.currentTime = 0;
+        mainVideo.play().catch(() => {});
+    }
+
+    // Go to video
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+/* =========================================
+    🎬 START CRAZY VIDEO
+   ========================================= */
+
+ function startVideos() {
+
+    // Hide second letter
+    document.getElementById("letter2-screen").style.display = "none";
+
+    // Show video screen
+    document.getElementById("videos-screen").style.display = "flex";
+
+    // Go to video
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
 
+}
+// 🎬 When crazy video finishes → show friends' wishes
+const mainVideo = document.getElementById("main-video");
+
+if (mainVideo) {
+    mainVideo.addEventListener("ended", function () {
+
+        document.getElementById("videos-screen").style.display = "none";
+
+        const wishesScreen = document.getElementById("wishes-screen");
+        wishesScreen.style.display = "flex";
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+}
+// 💗 When friends' wishes video finishes → show final photos
+
+const wishesVideo = document.getElementById("wishes-video");
+
+if (wishesVideo) {
+
+    wishesVideo.addEventListener("ended", function () {
+
+        // Hide wishes video
+        document.getElementById("wishes-screen").style.display = "none";
+
+        // Show final photo slideshow
+        startFinalPhotos();
+
+        // Go to the photos
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+}
+// =============================
+// 📸 FINAL PHOTO SLIDESHOW
+// =============================
+
+const finalPhotos = [
+    "photo9.jpeg",
+    "photo10.png",
+    "photo11.png",
+    "photo12.jpg",
+    "photo13.jpg"
+];
+
+let currentFinalPhoto = 0;
+
+function startFinalPhotos() {
+
+    const photosScreen =
+        document.getElementById("final-photos-screen");
+
+    const photo =
+        document.getElementById("final-slideshow-photo");
+
+    photosScreen.style.display = "flex";
+
+    currentFinalPhoto = 0;
+    photo.src = finalPhotos[currentFinalPhoto];
+
+    setInterval(() => {
+
+        photo.style.opacity = "0";
+
+        setTimeout(() => {
+
+            currentFinalPhoto++;
+
+            if (currentFinalPhoto >= finalPhotos.length) {
+                currentFinalPhoto = 0;
+            }
+
+            photo.src = finalPhotos[currentFinalPhoto];
+
+            photo.style.opacity = "1";
+
+        }, 800);
+
+    }, 3000);
 }
 /*
 
